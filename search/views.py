@@ -56,11 +56,11 @@ class SearchCategories(PaginatedElasticSearchAPIView):
 
     def generate_q_expression(self, query):
         return Q(
-                'multi_match', query=query,
-                fields=[
-                    'name',
-                    'description',
-                ], fuzziness='auto')
+            'multi_match', query=query,
+            fields=[
+                'name',
+                'description',
+            ], fuzziness='auto')
 
 
 class SearchArticles(PaginatedElasticSearchAPIView):
@@ -69,15 +69,15 @@ class SearchArticles(PaginatedElasticSearchAPIView):
 
     def generate_q_expression(self, query):
         return Q(
-                'multi_match', query=query,
-                fields=[
-                    'title',
-                    'author',
-                    'type',
-                    'content'
-                ], fuzziness='auto')
+            'multi_match', query=query,
+            fields=[
+                'title',
+                'author',
+                'type',
+                'content'
+            ], fuzziness='auto')
 
 
 class TestClass(PaginatedElasticSearchAPIView, ABC):
     """This class is made for only testing purpose"""
-    
+    # Testing
