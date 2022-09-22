@@ -1,4 +1,5 @@
 import abc
+from abc import ABC
 
 from django.http import HttpResponse
 from elasticsearch_dsl import Q
@@ -75,3 +76,8 @@ class SearchArticles(PaginatedElasticSearchAPIView):
                     'type',
                     'content'
                 ], fuzziness='auto')
+
+
+class TestClass(PaginatedElasticSearchAPIView, ABC):
+    """This class is made for only testing purpose"""
+    
